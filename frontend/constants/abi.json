@@ -1,0 +1,142 @@
+[
+  {
+    "type": "event",
+    "anonymous": false,
+    "name": "OwnershipTransferred",
+    "inputs": [
+      { "type": "address", "name": "previousOwner", "indexed": true },
+      { "type": "address", "name": "newOwner", "indexed": true }
+    ]
+  },
+  {
+    "type": "event",
+    "anonymous": false,
+    "name": "ProjectStarted",
+    "inputs": [
+      { "type": "uint16", "name": "_projectID", "indexed": false },
+      { "type": "string", "name": "_title", "indexed": false },
+      { "type": "string", "name": "_description", "indexed": false },
+      { "type": "uint256", "name": "_project_target_price", "indexed": false },
+      {
+        "type": "uint256",
+        "name": "_projest_deadline_date_unix",
+        "indexed": false
+      },
+      {
+        "type": "uint256",
+        "name": "_project_minimum_fund_price",
+        "indexed": false
+      },
+      { "type": "address", "name": "_projectOwner", "indexed": false },
+      { "type": "address", "name": "_contractAddress", "indexed": false },
+      { "type": "bytes32", "name": "_ipfs_cid", "indexed": false }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "createNewProject",
+    "constant": false,
+    "payable": false,
+    "gas": 29000000,
+    "inputs": [
+      { "type": "string", "name": "_title" },
+      { "type": "string", "name": "_description" },
+      { "type": "uint256", "name": "_project_target_price" },
+      { "type": "uint256", "name": "_projest_deadline_date_unix" },
+      { "type": "uint256", "name": "_project_minimum_fund_price" },
+      { "type": "bytes32", "name": "_ipfs_cid" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "getCurrentProjectID",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "gas": 29000000,
+    "inputs": [],
+    "outputs": [{ "type": "uint16" }]
+  },
+  {
+    "type": "function",
+    "name": "getProjectInfoByAddress",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "gas": 29000000,
+    "inputs": [{ "type": "address", "name": "_address" }],
+    "outputs": [
+      { "type": "string", "name": "_title" },
+      { "type": "string", "name": "_description" }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getProjectInfoById",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "gas": 29000000,
+    "inputs": [{ "type": "uint16", "name": "_projectId" }],
+    "outputs": [
+      { "type": "string", "name": "_title" },
+      { "type": "string", "name": "_description" }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getProjectLists",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "gas": 29000000,
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "tuple[]",
+        "components": [
+          { "type": "uint16", "name": "projectId" },
+          { "type": "address", "name": "projectAddress" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "markProjectFundingComplete",
+    "constant": false,
+    "payable": false,
+    "gas": 29000000,
+    "inputs": [{ "type": "address", "name": "_projectAddress" }],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "owner",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "gas": 29000000,
+    "inputs": [],
+    "outputs": [{ "type": "address" }]
+  },
+  {
+    "type": "function",
+    "name": "renounceOwnership",
+    "constant": false,
+    "payable": false,
+    "gas": 29000000,
+    "inputs": [],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "transferOwnership",
+    "constant": false,
+    "payable": false,
+    "gas": 29000000,
+    "inputs": [{ "type": "address", "name": "newOwner" }],
+    "outputs": []
+  }
+]
